@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 
 import './globals.css'
+import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { cn } from '~/shared/lib'
 import { Navbar } from '~/widgets'
 
@@ -28,8 +29,10 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Navbar />
-        <main>{children}</main>
+        <UserProvider>
+          <Navbar />
+          <main>{children}</main>
+        </UserProvider>
       </body>
     </html>
   )
