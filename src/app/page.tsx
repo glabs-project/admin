@@ -1,10 +1,8 @@
-import { cookies } from 'next/headers'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
-export default function Home() {
-  if (!cookies().get('session')) {
-    redirect('/signin')
-  }
+export default async function Home() {
+  // redirect('/api/auth/login')
 
-  return <main className="flex flex-col items-center justify-between p-24">admin</main>
+  return <main></main>
 }
