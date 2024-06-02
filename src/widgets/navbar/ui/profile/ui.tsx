@@ -13,7 +13,6 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger
 } from '~/shared/ui'
 
@@ -42,15 +41,8 @@ export const ProfileOfNavbar = () => {
       <DropdownMenuContent>
         <DropdownMenuLabel>@{user?.nickname}</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Профиль</DropdownMenuItem>
-        <DropdownMenuItem>Отчет</DropdownMenuItem>
-        <DropdownMenuItem>Настройки</DropdownMenuItem>
-        <DropdownMenuSeparator />
         <Link href={'/api/auth/logout'}>
-          <DropdownMenuItem>
-            Выйти
-            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          <DropdownMenuItem className="text-red-500">Выйти</DropdownMenuItem>
         </Link>
       </DropdownMenuContent>
     </DropdownMenu>

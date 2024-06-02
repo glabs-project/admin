@@ -3,7 +3,9 @@ import { Inter as FontSans } from 'next/font/google'
 
 import './globals.css'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
+
 import { cn } from '~/shared/lib'
+
 import { Navbar } from '~/widgets'
 
 const fontSans = FontSans({
@@ -29,10 +31,10 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <UserProvider>
-          <Navbar />
-          <main>{children}</main>
-        </UserProvider>
+          <UserProvider>
+            <Navbar />
+            <main className="w-full container">{children}</main>
+          </UserProvider>
       </body>
     </html>
   )

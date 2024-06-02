@@ -1,3 +1,12 @@
+import { UsersTable } from '~/entities/users'
+import { getUsersList } from '~/entities/users/api'
+
 export default async function Home() {
-  return <main>home</main>
+  const users = await getUsersList()
+
+  return (
+    <main>
+      <UsersTable users={users} />
+    </main>
+  )
 }
